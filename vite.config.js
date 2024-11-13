@@ -6,4 +6,5 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: "/src" }],
   },
+  base: '/hci-projects-webpage/', // Nombre del repositorio donde será desplegado
 });
