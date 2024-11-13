@@ -1,28 +1,30 @@
 import {
-  ChatBubbleBottomCenterTextIcon,
+  GlobeAltIcon,
+  PuzzlePieceIcon,
+  DocumentMagnifyingGlassIcon
 } from "@heroicons/react/24/solid";
 
 export const featuresData = [
   {
     color: "gray",
-    title: "Awarded Agency",
-    icon: ChatBubbleBottomCenterTextIcon,
+    title: "Videojuego Monkey Fight",
+    icon: PuzzlePieceIcon,
     description:
-      "Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.",
+      "Videojuego desarrollado en Roblox donde el objetivo es dominar el territorio y vencer a tus rivales.",
   },
   {
     color: "gray",
-    title: "Free Revisions",
-    icon: ChatBubbleBottomCenterTextIcon,
+    title: "Projecto Monkans",
+    icon: DocumentMagnifyingGlassIcon,
     description:
-      "Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.",
+      "Videojuego web desarrollada en Next Js donde el objetivo es fomentar el ejercicio mendiante la gamificación.",
   },
   {
     color: "gray",
-    title: "Verified Company",
-    icon: ChatBubbleBottomCenterTextIcon,
+    title: "Página web de presentación",
+    icon: GlobeAltIcon,
     description:
-      "Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!",
+      "Página web desarrollada en React donde el objetivo es presentar las etapas y documentación de los proyectos.",
   },
 ];
 

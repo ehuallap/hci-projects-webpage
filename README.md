@@ -16,7 +16,7 @@ To clone the repository, follow these steps:
 
 1. Clone the repository to your local machine using the following command:
    ```bash
-   git clone https://github.com/yourusername/hci-projects-webpage.git
+   git clone https://github.com/ehuallap/hci-projects-webpage.git
    ```
 
 2. Navigate to the project directory:
