@@ -85,16 +85,25 @@ export function Home() {
                 </Typography>
 
                 <div className="flex items-center justify-around">
-                  {selectedFeature.documentLink && (
-                    <a href={selectedFeature.documentLink} target="_blank" rel="noopener noreferrer">
-                      <IconButton color="blue" variant="outlined">
-                        <selectedFeature.icon className="w-5 h-5" />
-                      </IconButton>
+                  {/* Mostrar la portada del documento como enlace */}
+                  {selectedFeature.documentLink && selectedFeature.documentCover && (
+                    <a
+                      href={selectedFeature.documentLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center"
+                    >
+                      <img
+                        src={selectedFeature.documentCover}
+                        alt="Portada del documento"
+                        className="w-32 h-auto rounded-lg shadow-lg hover:opacity-80 transition-opacity"
+                      />
                       <Typography variant="button" color="blue">
-                        Documento
+                        Ver Documento
                       </Typography>
                     </a>
                   )}
+
                   {selectedFeature.githubLink && (
                     <a href={selectedFeature.githubLink} target="_blank" rel="noopener noreferrer">
                       <IconButton color="black" variant="outlined">
@@ -116,7 +125,6 @@ export function Home() {
                     </a>
                   )}
                 </div>
-                { /* <Button variant="filled">read more</Button> */}
               </div>
             </div>
           )}
@@ -126,42 +134,72 @@ export function Home() {
               {/* Línea de Tiempo para las Fases del Proyecto */}
               <section className="mt-32">
                 <div className="container mx-auto">
-                  <Typography variant="h3" color="blue-gray" className="mb-8 text-center font-bold">
-                    Fases del Proyecto
+                  <Typography variant="h3" className="mb-8 text-center font-bold text-gray-800">
+                    FASES DEL PROYECTO
                   </Typography>
                   <div className="relative flex flex-col space-y-12 border-l border-gray-300 pl-12">
-                    {selectedFeature.phases?.map(({ title, description, date, image }, index) => (
+                    {selectedFeature.phases?.map(({ title, description, date, images, videos, pdf }, index) => (
                       <div
                         key={index}
-                        className={`relative flex flex-col md:flex-row items-start ${
-                          image ? "space-y-6 md:space-y-0" : ""
-                        }`}
+                        className="relative flex flex-col space-y-8 md:space-y-0 md:flex-row items-start"
                       >
                         {/* Icono del círculo en cada etapa */}
-                        <div className="absolute -left-6 flex h-10 w-10 items-center justify-center rounded-full bg-blue-gray-900 text-white">
+                        <div className="absolute -left-6 flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white">
                           <span className="text-sm font-bold">{index + 1}</span>
                         </div>
 
-                        {/* Renderizar la imagen solo si existe */}
-                        {image && (
-                          <img
-                            src={image}
-                            alt={`Imagen de la fase ${index + 1}`}
-                            className="w-full md:w-1/3 h-auto rounded-lg shadow-lg mb-4 md:mb-0"
-                          />
-                        )}
-
-                        {/* Contenido de la fase */}
-                        <div className={`ml-12 ${image ? "md:w-2/3" : "w-full"}`}>
-                          <Typography variant="h4" color="blue-gray" className="font-semibold">
+                        {/* Contenido principal de la fase */}
+                        <div className="ml-12 w-full space-y-6">
+                          <Typography variant="h4" className="font-semibold text-gray-800">
                             {title}
                           </Typography>
-                          <Typography className="mb-2 text-sm text-gray-500">
-                            {date}
-                          </Typography>
-                          <Typography className="text-gray-700">
-                            {description}
-                          </Typography>
+                          <Typography className="mb-2 text-sm text-gray-500">{date}</Typography>
+                          <Typography className="text-gray-700">{description}</Typography>
+
+                          {/* Renderizar imágenes en fila */}
+                          {images && images.length > 0 && (
+                            <div className="flex flex-wrap gap-4">
+                              {images.map((imgSrc, imgIndex) => (
+                                <img
+                                  key={imgIndex}
+                                  src={imgSrc}
+                                  alt={`Imagen ${imgIndex + 1} de la fase ${index + 1}`}
+                                  className="w-1/3 rounded-lg shadow-lg"
+                                />
+                              ))}
+                            </div>
+                          )}
+
+                          {/* Renderizar videos en columnas */}
+                          {videos && videos.length > 0 && (
+                            <div className="space-y-4">
+                              {videos.map(({ url, caption }, vidIndex) => (
+                                <div key={vidIndex} className="flex flex-col md:flex-row items-start space-y-2 md:space-y-0 md:space-x-4">
+                                  <iframe
+                                    src={url}
+                                    className="w-full md:w-2/3 aspect-video rounded-lg shadow-lg"
+                                    title={`Video ${vidIndex + 1} de la fase ${index + 1}`}
+                                    allowFullScreen
+                                  ></iframe>
+                                  <Typography className="text-gray-700 md:w-1/3">{caption}</Typography>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+
+                          {/* Renderizar PDF como enlace */}
+                          {pdf && (
+                            <div className="w-full mt-4">
+                              <a
+                                href={pdf}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-500 hover:underline font-medium"
+                              >
+                                Ver documento relacionado
+                              </a>
+                            </div>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -170,7 +208,6 @@ export function Home() {
               </section>
             </>
           )}
-          
         </div>
       </section>
 
