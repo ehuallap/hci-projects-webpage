@@ -164,7 +164,7 @@ export const projectsData = [
       }
     ],
   },
-  /*{
+  {
     title: "Página web de presentación",
     description: "Desarrollo de una página web para mostrar información personal o profesional.",
     objectives: "Crear un portafolio personal en línea que resuma las habilidades y proyectos realizados.",
@@ -245,7 +245,7 @@ export const projectsData = [
         pdf: ""
       }
     ],
-  },*/
+  },
 ];
 
 export default projectsData;
