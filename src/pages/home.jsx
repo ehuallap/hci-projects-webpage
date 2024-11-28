@@ -29,6 +29,13 @@ export function Home() {
         <div className="max-w-8xl container relative mx-auto">
           <div className="flex flex-wrap items-center">
             <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
+              <div className="mb-6 flex justify-center">
+                <img
+                  src="https://raw.githubusercontent.com/ehuallap/hci-projects-webpage/refs/heads/main/images/paginaweb/logo_monka.png"
+                  alt="Logo"
+                  className="h-40 w-auto"
+                />
+              </div>
               <Typography variant="h1" color="white" className="mb-6 font-black">
                 PROYECTOS DESARROLLADOS
               </Typography>
