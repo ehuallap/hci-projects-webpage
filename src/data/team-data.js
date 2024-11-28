@@ -19,7 +19,7 @@ export const teamData = [
     ],
   },
   {
-    img: "https://scontent.flim2-1.fna.fbcdn.net/v/t39.30808-6/242149846_2860683977576997_5476502509272595214_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGFu2dtBHkzJkynrrxWig7NvdKdpgiXn-O90p2mCJef4wIMNLCO8EckTvHtF2f95Jsg4PZXUe64UvXH8ZzCdhQo&_nc_ohc=sMBFX5dLvIcQ7kNvgHSu4Da&_nc_zt=23&_nc_ht=scontent.flim2-1.fna&_nc_gid=Aewuc6z12_B1AUjHkUdFuoB&oh=00_AYC3Jyiq9gv-uijRrfXSmtU3HR_6cppLHvIRA2ND1TuxCg&oe=6739E6DF",
+    img: "https://i.ytimg.com/vi/K3OjjVnISc8/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYChYMA8=&rs=AOn4CLBtBvHSqdZP3_MmxoSLLSByUHJR6g",
     name: "Albert Daniel Llica Alvarez",
     position: "Estudiante de Ciencia de la Computación",
     socials: [

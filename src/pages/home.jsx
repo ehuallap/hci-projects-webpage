@@ -113,6 +113,56 @@ export function Home() {
               </div>
             </div>
           )}
+
+          {selectedFeature && (
+            <>
+              {/* Línea de Tiempo para las Fases del Proyecto */}
+              <section className="mt-32">
+                <div className="container mx-auto">
+                  <Typography variant="h3" color="blue-gray" className="mb-8 text-center font-bold">
+                    Fases del Proyecto
+                  </Typography>
+                  <div className="relative flex flex-col space-y-12 border-l border-gray-300 pl-12">
+                    {selectedFeature.phases?.map(({ title, description, date, image }, index) => (
+                      <div
+                        key={index}
+                        className={`relative flex flex-col md:flex-row items-start ${
+                          image ? "space-y-6 md:space-y-0" : ""
+                        }`}
+                      >
+                        {/* Icono del círculo en cada etapa */}
+                        <div className="absolute -left-6 flex h-10 w-10 items-center justify-center rounded-full bg-blue-gray-900 text-white">
+                          <span className="text-sm font-bold">{index + 1}</span>
+                        </div>
+
+                        {/* Renderizar la imagen solo si existe */}
+                        {image && (
+                          <img
+                            src={image}
+                            alt={`Imagen de la fase ${index + 1}`}
+                            className="w-full md:w-1/3 h-auto rounded-lg shadow-lg mb-4 md:mb-0"
+                          />
+                        )}
+
+                        {/* Contenido de la fase */}
+                        <div className={`ml-12 ${image ? "md:w-2/3" : "w-full"}`}>
+                          <Typography variant="h4" color="blue-gray" className="font-semibold">
+                            {title}
+                          </Typography>
+                          <Typography className="mb-2 text-sm text-gray-500">
+                            {date}
+                          </Typography>
+                          <Typography className="text-gray-700">
+                            {description}
+                          </Typography>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            </>
+          )}
           
         </div>
       </section>
